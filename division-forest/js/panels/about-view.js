@@ -250,7 +250,7 @@
         '<span>除法森林 · 「乘法星球」的姊妹篇</span>' +
         '<span class="ab-foot-links">' +
           '<button type="button" class="rp-text-btn" data-action="report">学习报告</button>' +
-          '<a class="rp-text-btn" href="../multiplication-planet/">去乘法星球</a>' +
+          '<a class="rp-text-btn" href="../multiplication-planet/index.html">去乘法星球</a>' +
           '<button type="button" class="rp-text-btn" data-action="home">回首页</button>' +
         '</span>' +
       '</footer>' +

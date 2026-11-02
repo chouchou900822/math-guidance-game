@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F6F1E6">
+  <title>数学冒险乐园 · 乘法星球与除法森林</title>
+  <meta name="description" content="两个给 6–9 岁孩子的数学小游戏：先在乘法星球背熟九九乘法口诀，再到除法森林用口诀把果子平均分。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3CclipPath id='c'%3E%3Crect width='100' height='100' rx='26'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23c)'%3E%3Crect width='100' height='100' fill='%2312824A'/%3E%3Cpath d='M0 0H100L0 100Z' fill='%232B4BF2'/%3E%3C/g%3E%3Cpath d='M19 19l21 21M40 19L19 40' stroke='%23fff' stroke-width='9' stroke-linecap='round'/%3E%3Cpath d='M57 72h28' stroke='%23fff' stroke-width='8' stroke-linecap='round'/%3E%3Ccircle cx='71' cy='59' r='5.5' fill='%23fff'/%3E%3Ccircle cx='71' cy='85' r='5.5' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="portal/portal.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <path d="M0 0H32L0 32Z" fill="#2B4BF2"/>
+            <path d="M32 0V32H0Z" fill="#12824A"/>
+            <path d="M6.6 6.6l7.2 7.2M13.8 6.6l-7.2 7.2" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+            <path d="M18.4 23.4h8.4" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="22.6" cy="19.2" r="1.6" fill="#fff"/>
+            <circle cx="22.6" cy="27.6" r="1.6" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="brand-name">数学冒险乐园</span>
+      </div>
+      <span class="topbar-note">给 6–9 岁孩子的数学小游戏</span>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="intro">
+      <span class="eyebrow"><span class="dot" aria-hidden="true"></span>表内乘法 · 表内除法 · 每天 10 分钟</span>
+      <h1 class="title">今天，去哪儿<em>冒险</em>？</h1>
+      <p class="lede">两个连在一起的数学小游戏：先在<b>乘法星球</b>背熟 45 句口诀，再到<b>除法森林</b>用口诀把果子平均分。进度会自动保存，随时回来接着玩。</p>
+    </section>
+
+    <div class="dests">
+      <article class="dest dest-mp" data-game="mp" aria-labelledby="mp-title">
+        <div class="dest-art">
+          <svg class="dest-svg" viewBox="0 0 360 200" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="mp-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101749"/><stop offset="1" stop-color="#2b4bf2"/></linearGradient>
+              <radialGradient id="mp-sea" cx="0.38" cy="0.32" r="0.78"><stop offset="0" stop-color="#7cc2ff"/><stop offset="0.5" stop-color="#398df1"/><stop offset="1" stop-color="#123777"/></radialGradient>
+              <clipPath id="mp-ball"><circle cx="180" cy="108" r="58"/></clipPath>
+              <clipPath id="mp-front"><rect x="40" y="108" width="280" height="80" transform="rotate(-14 180 108)"/></clipPath>
+            </defs>
+            <rect width="360" height="200" fill="url(#mp-sky)"/>
+            <g class="art-twinkle" fill="#ffffff"><circle cx="34" cy="150" r="1.6"/><circle cx="70" cy="30" r="1.3"/><circle cx="108" cy="178" r="1.4"/><circle cx="252" cy="24" r="1.5"/><circle cx="334" cy="110" r="1.2"/><circle cx="304" cy="182" r="1.6"/><circle cx="124" cy="40" r="1"/><circle cx="16" cy="88" r="1.1"/><circle cx="226" cy="182" r="1.1"/><circle cx="82" cy="108" r="0.9"/></g>
+            <g transform="translate(26 32) scale(.9)"><path d="M12 1.6l2.5 7.9 7.9 2.5-7.9 2.5-2.5 7.9-2.5-7.9L1.6 12l7.9-2.5z" fill="#cfc6ff" stroke="#18161c" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></g>
+            <g transform="translate(318 132) scale(.62)"><path d="M12 1.6l2.5 7.9 7.9 2.5-7.9 2.5-2.5 7.9-2.5-7.9L1.6 12l7.9-2.5z" fill="#ffd62e" stroke="#18161c" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></g>
+            <circle cx="180" cy="108" r="86" fill="none" stroke="#ffffff" stroke-opacity=".24" stroke-width="1.4" stroke-dasharray="3 6"/>
+            <circle cx="99.2" cy="78.6" r="5" fill="#ff4d2e" stroke="#18161c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+            <g class="art-float">
+              <g transform="rotate(-14 180 108)"><ellipse cx="180" cy="108" rx="102" ry="24" fill="none" stroke="#18161c" stroke-width="11"/><ellipse cx="180" cy="108" rx="102" ry="24" fill="none" stroke="#ffd62e" stroke-width="6"/></g>
+              <circle cx="180" cy="108" r="66" fill="#6fbfff" opacity=".22"/>
+              <circle cx="180" cy="108" r="58" fill="url(#mp-sea)"/>
+              <g clip-path="url(#mp-ball)">
+                <ellipse cx="180" cy="52" rx="34" ry="11" fill="#edfaff" stroke="#18161c" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+                <path d="M136 86c6-14 22-20 36-14 10 4 12 16 4 24-6 6-4 16-12 20-10 4-22-2-28-12-4-6-4-12 0-18z" fill="#68d6b1" stroke="#18161c" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+                <path d="M196 104c4-12 18-18 30-12 10 6 10 18 4 26-6 10-18 14-28 8-8-4-10-14-6-22z" fill="#68d6b1" stroke="#18161c" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+                <path d="M160 136c6-6 16-4 18 4 2 8-6 12-14 10-6-2-8-10-4-14z" fill="#68d6b1" stroke="#18161c" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+                <path d="M146 84c4-6 12-8 18-4M204 106c4-4 10-5 15-2" fill="none" stroke="#b0ead0" stroke-width="3" stroke-linecap="round"/>
+                <path d="M110 38h140v140H110Z M108 94a58 58 0 1 0 116 0a58 58 0 1 0-116 0Z" fill="#0a1238" fill-opacity=".28" fill-rule="evenodd"/>
+                <ellipse cx="156" cy="76" rx="15" ry="8" fill="#ffffff" opacity=".5" transform="rotate(-32 156 76)"/>
+              </g>
+              <circle cx="180" cy="108" r="58" fill="none" stroke="#18161c" stroke-width="4"/>
+              <g clip-path="url(#mp-front)"><g transform="rotate(-14 180 108)"><ellipse cx="180" cy="108" rx="102" ry="24" fill="none" stroke="#18161c" stroke-width="11"/><ellipse cx="180" cy="108" rx="102" ry="24" fill="none" stroke="#ffd62e" stroke-width="6"/></g></g>
+            </g>
+            <g class="art-bob"><g transform="translate(282 14) scale(2.5)">
+              <path d="M12 2.6l2.9 6.05 6.66.86-4.9 4.7 1.26 6.63L12 17.6l-5.92 3.24 1.26-6.63-4.9-4.7 6.66-.86z" fill="#ffd62e" stroke="#18161c" stroke-width=".9" stroke-linejoin="round"/>
+              <circle cx="9.5" cy="11.1" r="1.15" fill="#18161c"/><circle cx="14.5" cy="11.1" r="1.15" fill="#18161c"/>
+              <path d="M9.9 14.2q2.1 1.9 4.2 0" fill="none" stroke="#18161c" stroke-width="1" stroke-linecap="round"/>
+            </g></g>
+          </svg>
+          <span class="dest-step">第 1 站</span>
+          <span class="dest-sticker" aria-hidden="true">3 × 4 = 12</span>
+        </div>
+        <div class="dest-body">
+          <span class="dest-kicker">九九表闯关</span>
+          <h2 class="dest-title" id="mp-title">乘法星球</h2>
+          <p class="dest-desc">9 颗星球就是 9 张乘法表。先用点阵看懂「几个几」，再闯关收星星、换星球皮肤，终点是 1024 号空间站。</p>
+          <ul class="dest-facts" aria-label="游戏内容">
+            <li><b>9</b> 张乘法表</li>
+            <li><b>45</b> 句口诀</li>
+            <li><b>16</b> 枚奖章</li>
+          </ul>
+          <div class="dest-progress" data-progress hidden></div>
+          <div class="dest-actions">
+            <a class="btn dest-go" href="multiplication-planet/index.html">进入乘法星球<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13 6.6l5.4 5.4-5.4 5.4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="dest-demo" href="multiplication-planet/index.html?demo=1" title="全部内容直接解锁，操作不会保存">演示模式</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dest dest-df" data-game="df" aria-labelledby="df-title">
+        <div class="dest-art">
+          <svg class="dest-svg" viewBox="0 0 360 200" aria-hidden="true" focusable="false">
+            <defs><linearGradient id="df-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe6ff"/><stop offset="1" stop-color="#f1fbff"/></linearGradient></defs>
+            <rect width="360" height="200" fill="url(#df-sky)"/>
+            <path class="art-rays" d="M335 44L342 44M327.7 61.7L332.6 66.6M310 69L310 76M292.3 61.7L287.4 66.6M285 44L278 44M292.3 26.3L287.4 21.4M310 19L310 12M327.7 26.3L332.6 21.4" fill="none" stroke="#18161c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+            <circle cx="310" cy="44" r="18" fill="#ffd84d" stroke="#18161c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="304" cy="42" r="1.8" fill="#18161c"/><circle cx="316" cy="42" r="1.8" fill="#18161c"/><path d="M305.5 49q4.5 4 9 0" fill="none" stroke="#18161c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+            <path class="art-cloud" d="M22 70h52a10 10 0 0 0-3-19a15 15 0 0 0-27-6a17 17 0 0 0-22 25z" fill="#ffffff" stroke="#18161c" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M-6 146C58 118 116 122 160 140C206 118 284 110 366 132V206H-6Z" fill="#b9e6a2" stroke="#18161c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M-6 166C76 152 148 156 196 160S318 164 366 154V206H-6Z" fill="#8ed27a" stroke="#18161c" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M30 184l3-9 3 8 3-11 3 11" fill="none" stroke="#4e9e45" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M128 190l3-9 3 8 3-11 3 11" fill="none" stroke="#4e9e45" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M292 188l3-9 3 8 3-11 3 11" fill="none" stroke="#4e9e45" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M342 178l3-9 3 8 3-11 3 11" fill="none" stroke="#4e9e45" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M74 176l3-9 3 8 3-11 3 11" fill="none" stroke="#4e9e45" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="108" cy="190" r="2.9" fill="#ffffff" stroke="#18161c" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="105.2" cy="193.8" r="2.9" fill="#ffffff" stroke="#18161c" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="100.8" cy="192.4" r="2.9" fill="#ffffff" stroke="#18161c" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="100.8" cy="187.6" r="2.9" fill="#ffffff" stroke="#18161c" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="105.2" cy="186.2" r="2.9" fill="#ffffff" stroke="#18161c" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="104" cy="190" r="2.3" fill="#ffd23f" stroke="#18161c" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round"/>
+            <circle cx="322" cy="188" r="2.9" fill="#ffd23f" stroke="#18161c" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="319.2" cy="191.8" r="2.9" fill="#ffd23f" stroke="#18161c" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="314.8" cy="190.4" r="2.9" fill="#ffd23f" stroke="#18161c" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="314.8" cy="185.6" r="2.9" fill="#ffd23f" stroke="#18161c" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="319.2" cy="184.2" r="2.9" fill="#ffd23f" stroke="#18161c" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="318" cy="188" r="2.3" fill="#ff8a5c" stroke="#18161c" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M188 170C192 150 193 132 192 110H210C209 132 210 150 214 170Z" fill="#a0673a" stroke="#18161c" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M195 170V160A6 6 0 0 1 207 160V170Z" fill="#5b3a24" stroke="#18161c" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="204" cy="165" r="1.4" fill="#ffd23f"/>
+            <g class="art-sway">
+              <circle cx="201" cy="76" r="36" fill="#3e9e55" stroke="#18161c" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="168" cy="92" r="26" fill="#3e9e55" stroke="#18161c" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="234" cy="92" r="26" fill="#3e9e55" stroke="#18161c" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="172" cy="60" r="25" fill="#3e9e55" stroke="#18161c" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="60" r="25" fill="#3e9e55" stroke="#18161c" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="201" cy="42" r="28" fill="#3e9e55" stroke="#18161c" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+              <circle cx="201" cy="76" r="36" fill="#3e9e55"/><circle cx="168" cy="92" r="26" fill="#3e9e55"/><circle cx="234" cy="92" r="26" fill="#3e9e55"/><circle cx="172" cy="60" r="25" fill="#3e9e55"/><circle cx="230" cy="60" r="25" fill="#3e9e55"/><circle cx="201" cy="42" r="28" fill="#3e9e55"/>
+              <circle cx="201" cy="72" r="31" fill="#5ec46c"/><circle cx="168" cy="88" r="21" fill="#5ec46c"/><circle cx="234" cy="88" r="21" fill="#5ec46c"/><circle cx="172" cy="56" r="20" fill="#5ec46c"/><circle cx="230" cy="56" r="20" fill="#5ec46c"/><circle cx="201" cy="38" r="23" fill="#5ec46c"/>
+              <ellipse cx="178" cy="52" rx="14" ry="8" fill="#a3e692" transform="rotate(-24 178 52)"/><ellipse cx="214" cy="26" rx="10" ry="6" fill="#a3e692" transform="rotate(-10 214 26)"/>
+              <g transform="translate(169 65) scale(0.75)"><path d="M12 7.6c-1.6-1.5-6.9-2-8 2.8-1.2 4.9 1.9 10.9 5 11.1 1.4.1 2-.7 3-.7s1.6.8 3 .7c3.1-.2 6.2-6.2 5-11.1-1.1-4.8-6.4-4.3-8-2.8z" fill="#ff5a4a" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5"/><ellipse cx="8.2" cy="11.4" rx="1.2" ry="2.1" fill="#fff" transform="rotate(22 8.2 11.4)" opacity=".55"/><path d="M12 7.6c-.1-1.8.4-3.2 1.4-4.2" fill="none" stroke="#6b4226" stroke-width="1.6" stroke-linecap="round"/><path d="M13.2 5.6c1.4-1.9 3.8-2.2 5-1.6-.7 1.9-3 2.8-5 1.6z" fill="#4cb34f" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.2"/></g>
+              <g transform="translate(213 49) scale(0.75)"><path d="M12 7.6c-1.6-1.5-6.9-2-8 2.8-1.2 4.9 1.9 10.9 5 11.1 1.4.1 2-.7 3-.7s1.6.8 3 .7c3.1-.2 6.2-6.2 5-11.1-1.1-4.8-6.4-4.3-8-2.8z" fill="#ff5a4a" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5"/><ellipse cx="8.2" cy="11.4" rx="1.2" ry="2.1" fill="#fff" transform="rotate(22 8.2 11.4)" opacity=".55"/><path d="M12 7.6c-.1-1.8.4-3.2 1.4-4.2" fill="none" stroke="#6b4226" stroke-width="1.6" stroke-linecap="round"/><path d="M13.2 5.6c1.4-1.9 3.8-2.2 5-1.6-.7 1.9-3 2.8-5 1.6z" fill="#4cb34f" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.2"/></g>
+              <g transform="translate(231 87) scale(0.75)"><path d="M12 7.6c-1.6-1.5-6.9-2-8 2.8-1.2 4.9 1.9 10.9 5 11.1 1.4.1 2-.7 3-.7s1.6.8 3 .7c3.1-.2 6.2-6.2 5-11.1-1.1-4.8-6.4-4.3-8-2.8z" fill="#ff5a4a" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5"/><ellipse cx="8.2" cy="11.4" rx="1.2" ry="2.1" fill="#fff" transform="rotate(22 8.2 11.4)" opacity=".55"/><path d="M12 7.6c-.1-1.8.4-3.2 1.4-4.2" fill="none" stroke="#6b4226" stroke-width="1.6" stroke-linecap="round"/><path d="M13.2 5.6c1.4-1.9 3.8-2.2 5-1.6-.7 1.9-3 2.8-5 1.6z" fill="#4cb34f" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.2"/></g>
+              <g transform="translate(181 91) scale(0.75)"><path d="M12 7.6c-1.6-1.5-6.9-2-8 2.8-1.2 4.9 1.9 10.9 5 11.1 1.4.1 2-.7 3-.7s1.6.8 3 .7c3.1-.2 6.2-6.2 5-11.1-1.1-4.8-6.4-4.3-8-2.8z" fill="#ff5a4a" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5"/><ellipse cx="8.2" cy="11.4" rx="1.2" ry="2.1" fill="#fff" transform="rotate(22 8.2 11.4)" opacity=".55"/><path d="M12 7.6c-.1-1.8.4-3.2 1.4-4.2" fill="none" stroke="#6b4226" stroke-width="1.6" stroke-linecap="round"/><path d="M13.2 5.6c1.4-1.9 3.8-2.2 5-1.6-.7 1.9-3 2.8-5 1.6z" fill="#4cb34f" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.2"/></g>
+              <g transform="translate(203 73) scale(0.75)"><path d="M12 7.6c-1.6-1.5-6.9-2-8 2.8-1.2 4.9 1.9 10.9 5 11.1 1.4.1 2-.7 3-.7s1.6.8 3 .7c3.1-.2 6.2-6.2 5-11.1-1.1-4.8-6.4-4.3-8-2.8z" fill="#ff5a4a" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5"/><ellipse cx="8.2" cy="11.4" rx="1.2" ry="2.1" fill="#fff" transform="rotate(22 8.2 11.4)" opacity=".55"/><path d="M12 7.6c-.1-1.8.4-3.2 1.4-4.2" fill="none" stroke="#6b4226" stroke-width="1.6" stroke-linecap="round"/><path d="M13.2 5.6c1.4-1.9 3.8-2.2 5-1.6-.7 1.9-3 2.8-5 1.6z" fill="#4cb34f" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.2"/></g>
+              <g transform="translate(151 85) scale(0.75)"><path d="M12 7.6c-1.6-1.5-6.9-2-8 2.8-1.2 4.9 1.9 10.9 5 11.1 1.4.1 2-.7 3-.7s1.6.8 3 .7c3.1-.2 6.2-6.2 5-11.1-1.1-4.8-6.4-4.3-8-2.8z" fill="#ff5a4a" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5"/><ellipse cx="8.2" cy="11.4" rx="1.2" ry="2.1" fill="#fff" transform="rotate(22 8.2 11.4)" opacity=".55"/><path d="M12 7.6c-.1-1.8.4-3.2 1.4-4.2" fill="none" stroke="#6b4226" stroke-width="1.6" stroke-linecap="round"/><path d="M13.2 5.6c1.4-1.9 3.8-2.2 5-1.6-.7 1.9-3 2.8-5 1.6z" fill="#4cb34f" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.2"/></g>
+              <g transform="translate(191 27) scale(0.75)"><path d="M12 7.6c-1.6-1.5-6.9-2-8 2.8-1.2 4.9 1.9 10.9 5 11.1 1.4.1 2-.7 3-.7s1.6.8 3 .7c3.1-.2 6.2-6.2 5-11.1-1.1-4.8-6.4-4.3-8-2.8z" fill="#ff5a4a" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5"/><ellipse cx="8.2" cy="11.4" rx="1.2" ry="2.1" fill="#fff" transform="rotate(22 8.2 11.4)" opacity=".55"/><path d="M12 7.6c-.1-1.8.4-3.2 1.4-4.2" fill="none" stroke="#6b4226" stroke-width="1.6" stroke-linecap="round"/><path d="M13.2 5.6c1.4-1.9 3.8-2.2 5-1.6-.7 1.9-3 2.8-5 1.6z" fill="#4cb34f" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.2"/></g>
+            </g>
+            <g transform="translate(98 122) scale(1.08)"><path d="M10.6 36.8L3.7 36.0L8.7 31.2L2.5 28.0L8.9 25.3L4.4 20.1L11.4 20.0L9.2 13.4L15.6 16.0L16.0 9.0L21.1 13.8L24.0 7.5L26.9 13.8L32.0 9.0L32.4 16.0L38.8 13.4L36.6 20.0L43.6 20.1L39.1 25.3L45.5 28.0L39.3 31.2L44.3 36.0L37.4 36.7Z" fill="#8b5e3c" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.2"/><circle cx="13.4" cy="22.6" r="3.4" fill="#f5d9b0" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.8"/><circle cx="34.6" cy="22.6" r="3.4" fill="#f5d9b0" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.8"/><ellipse cx="24" cy="31.4" rx="13.4" ry="11.4" fill="#f5d9b0" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.2"/><circle cx="19.4" cy="30" r="1.9" fill="#1b1f17"/><circle cx="28.6" cy="30" r="1.9" fill="#1b1f17"/><circle cx="20.008" cy="29.354" r="0.608" fill="#fff"/><circle cx="29.208000000000002" cy="29.354" r="0.608" fill="#fff"/><ellipse cx="24" cy="35.2" rx="2.4" ry="1.8" fill="#1b1f17"/><circle cx="15.6" cy="34" r="2.3" fill="#ff9c86" opacity=".55"/><circle cx="32.4" cy="34" r="2.3" fill="#ff9c86" opacity=".55"/></g>
+            <g transform="translate(148.5 164.5) scale(0.625)"><path d="M12 7.6c-1.6-1.5-6.9-2-8 2.8-1.2 4.9 1.9 10.9 5 11.1 1.4.1 2-.7 3-.7s1.6.8 3 .7c3.1-.2 6.2-6.2 5-11.1-1.1-4.8-6.4-4.3-8-2.8z" fill="#ff5a4a" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5"/><ellipse cx="8.2" cy="11.4" rx="1.2" ry="2.1" fill="#fff" transform="rotate(22 8.2 11.4)" opacity=".55"/><path d="M12 7.6c-.1-1.8.4-3.2 1.4-4.2" fill="none" stroke="#6b4226" stroke-width="1.6" stroke-linecap="round"/><path d="M13.2 5.6c1.4-1.9 3.8-2.2 5-1.6-.7 1.9-3 2.8-5 1.6z" fill="#4cb34f" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.2"/></g><g transform="translate(162.5 164.5) scale(0.625)"><path d="M12 7.6c-1.6-1.5-6.9-2-8 2.8-1.2 4.9 1.9 10.9 5 11.1 1.4.1 2-.7 3-.7s1.6.8 3 .7c3.1-.2 6.2-6.2 5-11.1-1.1-4.8-6.4-4.3-8-2.8z" fill="#ff5a4a" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5"/><ellipse cx="8.2" cy="11.4" rx="1.2" ry="2.1" fill="#fff" transform="rotate(22 8.2 11.4)" opacity=".55"/><path d="M12 7.6c-.1-1.8.4-3.2 1.4-4.2" fill="none" stroke="#6b4226" stroke-width="1.6" stroke-linecap="round"/><path d="M13.2 5.6c1.4-1.9 3.8-2.2 5-1.6-.7 1.9-3 2.8-5 1.6z" fill="#4cb34f" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.2"/></g><g transform="translate(155.5 153.5) scale(0.625)"><path d="M12 7.6c-1.6-1.5-6.9-2-8 2.8-1.2 4.9 1.9 10.9 5 11.1 1.4.1 2-.7 3-.7s1.6.8 3 .7c3.1-.2 6.2-6.2 5-11.1-1.1-4.8-6.4-4.3-8-2.8z" fill="#ff5a4a" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5"/><ellipse cx="8.2" cy="11.4" rx="1.2" ry="2.1" fill="#fff" transform="rotate(22 8.2 11.4)" opacity=".55"/><path d="M12 7.6c-.1-1.8.4-3.2 1.4-4.2" fill="none" stroke="#6b4226" stroke-width="1.6" stroke-linecap="round"/><path d="M13.2 5.6c1.4-1.9 3.8-2.2 5-1.6-.7 1.9-3 2.8-5 1.6z" fill="#4cb34f" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.2"/></g>
+            <g transform="translate(222.5 166.5) scale(0.625)"><path d="M12 7.6c-1.6-1.5-6.9-2-8 2.8-1.2 4.9 1.9 10.9 5 11.1 1.4.1 2-.7 3-.7s1.6.8 3 .7c3.1-.2 6.2-6.2 5-11.1-1.1-4.8-6.4-4.3-8-2.8z" fill="#ff5a4a" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5"/><ellipse cx="8.2" cy="11.4" rx="1.2" ry="2.1" fill="#fff" transform="rotate(22 8.2 11.4)" opacity=".55"/><path d="M12 7.6c-.1-1.8.4-3.2 1.4-4.2" fill="none" stroke="#6b4226" stroke-width="1.6" stroke-linecap="round"/><path d="M13.2 5.6c1.4-1.9 3.8-2.2 5-1.6-.7 1.9-3 2.8-5 1.6z" fill="#4cb34f" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.2"/></g><g transform="translate(236.5 166.5) scale(0.625)"><path d="M12 7.6c-1.6-1.5-6.9-2-8 2.8-1.2 4.9 1.9 10.9 5 11.1 1.4.1 2-.7 3-.7s1.6.8 3 .7c3.1-.2 6.2-6.2 5-11.1-1.1-4.8-6.4-4.3-8-2.8z" fill="#ff5a4a" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5"/><ellipse cx="8.2" cy="11.4" rx="1.2" ry="2.1" fill="#fff" transform="rotate(22 8.2 11.4)" opacity=".55"/><path d="M12 7.6c-.1-1.8.4-3.2 1.4-4.2" fill="none" stroke="#6b4226" stroke-width="1.6" stroke-linecap="round"/><path d="M13.2 5.6c1.4-1.9 3.8-2.2 5-1.6-.7 1.9-3 2.8-5 1.6z" fill="#4cb34f" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.2"/></g><g transform="translate(229.5 155.5) scale(0.625)"><path d="M12 7.6c-1.6-1.5-6.9-2-8 2.8-1.2 4.9 1.9 10.9 5 11.1 1.4.1 2-.7 3-.7s1.6.8 3 .7c3.1-.2 6.2-6.2 5-11.1-1.1-4.8-6.4-4.3-8-2.8z" fill="#ff5a4a" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5"/><ellipse cx="8.2" cy="11.4" rx="1.2" ry="2.1" fill="#fff" transform="rotate(22 8.2 11.4)" opacity=".55"/><path d="M12 7.6c-.1-1.8.4-3.2 1.4-4.2" fill="none" stroke="#6b4226" stroke-width="1.6" stroke-linecap="round"/><path d="M13.2 5.6c1.4-1.9 3.8-2.2 5-1.6-.7 1.9-3 2.8-5 1.6z" fill="#4cb34f" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.2"/></g>
+            <g transform="translate(250 118) scale(1.08)"><ellipse cx="17.4" cy="13" rx="4.8" ry="10.6" fill="#f6f2ea" transform="rotate(-14 17.4 13)" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.2"/><ellipse cx="17.6" cy="13.8" rx="2.3" ry="7" fill="#ffb4c2" transform="rotate(-14 17.6 13.8)"/><ellipse cx="30.6" cy="13" rx="4.8" ry="10.6" fill="#f6f2ea" transform="rotate(14 30.6 13)" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.2"/><ellipse cx="30.4" cy="13.8" rx="2.3" ry="7" fill="#ffb4c2" transform="rotate(14 30.4 13.8)"/><circle cx="24" cy="30" r="13.6" fill="#f6f2ea" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.2"/><circle cx="19" cy="28.8" r="1.9" fill="#1b1f17"/><circle cx="29" cy="28.8" r="1.9" fill="#1b1f17"/><circle cx="19.608" cy="28.154" r="0.608" fill="#fff"/><circle cx="29.608" cy="28.154" r="0.608" fill="#fff"/><path d="M22.3 32.4h3.4l-1.7 2z" fill="#ff7f98" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1"/><path d="M24 34.4v1.4M24 35.8q-1.6 1.5-3 .3M24 35.8q1.6 1.5 3 .3" fill="none" stroke="#1b1f17" stroke-linejoin="round" stroke-linecap="round" stroke-width="1.4"/><circle cx="15.6" cy="33" r="2.3" fill="#ff9c86" opacity=".55"/><circle cx="32.4" cy="33" r="2.3" fill="#ff9c86" opacity=".55"/></g>
+          </svg>
+          <span class="dest-step">第 2 站</span>
+          <span class="dest-sticker" aria-hidden="true">6 ÷ 2 = 3</span>
+        </div>
+        <div class="dest-body">
+          <span class="dest-kicker">平均分闯关</span>
+          <h2 class="dest-title" id="df-title">除法森林</h2>
+          <p class="dest-desc">9 家小动物就是 9 张除法表。先动手把果子平均分，再用乘法口诀求商；攒松果种大树，终点是 1024 丰收节。</p>
+          <ul class="dest-facts" aria-label="游戏内容">
+            <li><b>9</b> 张除法表</li>
+            <li><b>81</b> 道除法</li>
+            <li><b>16</b> 枚奖章</li>
+          </ul>
+          <div class="dest-progress" data-progress hidden></div>
+          <div class="dest-actions">
+            <a class="btn dest-go" href="division-forest/index.html">进入除法森林<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13 6.6l5.4 5.4-5.4 5.4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="dest-demo" href="division-forest/index.html?demo=1" title="全部内容直接解锁，操作不会保存">演示模式</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <section class="bridge" aria-labelledby="bridge-title">
+      <div class="bridge-copy">
+        <span class="bridge-kicker">为什么先乘后除</span>
+        <h2 id="bridge-title">一句口诀，能算三道题</h2>
+        <p>除法用的就是乘法口诀。在乘法星球背熟「三四十二」，到了除法森林，<span class="nowrap">12 ÷ 3</span> 和 <span class="nowrap">12 ÷ 4</span> 马上就能想出来。</p>
+      </div>
+      <div class="bridge-demo">
+        <span class="chant">三四十二</span>
+        <span class="bridge-arrow" aria-hidden="true">→</span>
+        <ul class="bridge-facts" aria-label="口诀三四十二能算的三道题">
+          <li class="is-mul">3 × 4 = 12</li>
+          <li class="is-div">12 ÷ 3 = 4</li>
+          <li class="is-div">12 ÷ 4 = 3</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span class="foot-tag">给家长</span>
+    <span class="foot-text">两个游戏都不用注册、不上传任何数据；学习记录只保存在这台设备的浏览器里，进入游戏后点页面底部的「学习报告」就能查看。</span>
+  </footer>
+
+  <script src="portal/portal.js"></script>
+</body>
+</html>
