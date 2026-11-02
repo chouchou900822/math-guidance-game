@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F3F1E3">
+  <title>除法森林 · 平均分闯关</title>
+  <meta name="description" content="把表内除法变成一场森林冒险：9 家小动物、81 道除法、16 枚奖章，先动手平均分，再用乘法口诀求商，每天一套挑战，终点是把 1024 对半分到 1 的丰收节。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='26' fill='%2312824A'/%3E%3Crect x='20' y='44' width='60' height='12' rx='6' fill='%23FFD23F' stroke='%231B1F17' stroke-width='4'/%3E%3Ccircle cx='50' cy='25' r='11' fill='%23FF5A4A' stroke='%231B1F17' stroke-width='4'/%3E%3Ccircle cx='50' cy='75' r='11' fill='%23FF5A4A' stroke='%231B1F17' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/screens.css">
+  <link rel="stylesheet" href="css/report.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/awards.css">
+  <link rel="stylesheet" href="css/egg.css">
+  <link rel="stylesheet" href="css/forest.css">
+</head>
+<body>
+  <div class="sky" id="sky" aria-hidden="true"></div>
+
+  <div class="demo-bar" id="demo-bar" role="status">
+    <span class="demo-tag">演示模式</span>
+    <span class="demo-text">全部 10 棵大树与 1024 丰收节已解锁 · 演示中的操作不会保存</span>
+    <a class="demo-exit" href="./">退出演示</a>
+  </div>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#home" data-action="home" aria-label="回到除法森林首页">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <rect x="4.6" y="10.6" width="14.8" height="2.8" rx="1.4" fill="#FFD23F" stroke="#1B1F17" stroke-width="1.3"/>
+            <circle cx="12" cy="5.8" r="2.6" fill="#FF5A4A" stroke="#1B1F17" stroke-width="1.3"/>
+            <circle cx="12" cy="18.2" r="2.6" fill="#FF5A4A" stroke="#1B1F17" stroke-width="1.3"/>
+          </svg>
+        </span>
+        <span class="brand-name">除法森林</span>
+      </a>
+
+      <div class="topbar-tools">
+        <button class="star-pill" type="button" data-action="shop" aria-label="可用松果，去大树苗圃看看" title="去大树苗圃">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3.6V1.6" fill="none" stroke="#5A361C" stroke-width="1.7" stroke-linecap="round"/>
+            <path d="M12 3.4c4.6 1.8 6.6 6.2 6.2 10.6-.5 4.6-3.4 7.4-6.2 8-2.8-.6-5.7-3.4-6.2-8C5.4 9.6 7.4 5.2 12 3.4z"
+                  fill="#C27B3A" stroke="#1B1F17" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M7.6 9.6q4.4 2.6 8.8 0M6.6 13.6q5.4 3 10.8 0M7.8 17.6q4.2 2.4 8.4 0"
+                  fill="none" stroke="#7A4520" stroke-width="1.1" stroke-linecap="round"/>
+          </svg>
+          <span id="cone-total">0</span>
+        </button>
+        <button class="icon-btn" id="sound-toggle" type="button" data-action="toggle-sound" aria-label="关闭声音" aria-pressed="true">
+          <svg class="ico-sound-on" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 9.6h3.1L12 5.4v13.2L7.1 14.4H4z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>
+            <path d="M15.8 9.2a4 4 0 0 1 0 5.6M18.4 6.6a8 8 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+          </svg>
+          <svg class="ico-sound-off" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 9.6h3.1L12 5.4v13.2L7.1 14.4H4z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>
+            <path d="M15.6 9.6l5 4.8M20.6 9.6l-5 4.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="app">
+
+    <main id="view" class="view" tabindex="-1"></main>
+
+    <footer class="site-foot">
+      <span class="foot-tag">给家长</span>
+      <span>先点开一张表，让孩子动手「平均分」看懂除法，再用乘法口诀求商闯关 —— 比死记硬背更牢。</span>
+      <span class="foot-meta"><a class="foot-demo" href="../multiplication-planet/">「乘法星球」姊妹篇</a> · <a class="foot-demo" href="?demo=1">演示模式</a></span>
+      <span class="foot-nav">
+        <button type="button" class="foot-link" data-action="report">学习报告</button>
+        <button type="button" class="foot-link" data-action="awards">奖章墙</button>
+        <button type="button" class="foot-link" data-action="about">关于这个作品</button>
+      </span>
+    </footer>
+  </div>
+
+  <div id="celebrate" class="celebrate" aria-hidden="true"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <p style="text-align:center;padding:24px;font-weight:700;">这个游戏需要开启 JavaScript 才能玩哦。</p>
+  </noscript>
+
+  <script src="js/data/core.js"></script>
+  <script src="js/data/store-migrate.js"></script>
+  <script src="js/data/store.js"></script>
+  <script src="js/data/store-demo.js"></script>
+  <script src="js/data/store-quiz.js"></script>
+  <script src="js/data/stats-text.js"></script>
+  <script src="js/data/stats.js"></script>
+  <script src="js/base/audio.js"></script>
+  <script src="js/base/ui.js"></script>
+  <script src="js/forest/art.js"></script>
+  <script src="js/forest/tree.js"></script>
+  <script src="js/screens/skins.js"></script>
+  <script src="js/forest/egg.js"></script>
+  <script src="js/screens/skins-view.js"></script>
+  <script src="js/screens/home.js"></script>
+  <script src="js/screens/learn.js"></script>
+  <script src="js/screens/speak.js"></script>
+  <script src="js/screens/quiz.js"></script>
+  <script src="js/screens/play.js"></script>
+  <script src="js/panels/harvest.js"></script>
+  <script src="js/panels/report-view.js"></script>
+  <script src="js/panels/report.js"></script>
+  <script src="js/panels/about-view.js"></script>
+  <script src="js/panels/about.js"></script>
+  <script src="js/data/daily.js"></script>
+  <script src="js/panels/awards-list.js"></script>
+  <script src="js/panels/awards.js"></script>
+  <script src="js/screens/awards-view.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/app-actions.js"></script>
+</body>
+</html>
