@@ -1,0 +1,945 @@
+/* ============================================================
+   乘法星球 · 每日挑战 + 奖章墙
+   ============================================================ */
+
+body.is-awards .site-foot {
+  display: none;
+}
+
+/* ---------- 首页今日行 ---------- */
+
+.today-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.28fr) minmax(0, 0.72fr);
+  gap: 14px;
+  margin-top: clamp(22px, 3.2vw, 34px);
+}
+
+.daily-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  border: var(--bd);
+  border-radius: var(--r-lg);
+  background: var(--card);
+  box-shadow: var(--sh);
+}
+
+.dc-date {
+  position: relative;
+  flex: 0 0 auto;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  width: 72px;
+  height: 78px;
+  padding: 6px 4px;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  background: var(--blue);
+  color: #fff;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.dc-date b {
+  font-family: var(--font-num);
+  font-size: 31px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.dc-date span {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
+}
+
+.dc-date i {
+  font-style: normal;
+  font-size: 9.5px;
+  font-weight: 700;
+  opacity: 0.72;
+}
+
+.daily-card.is-done .dc-date {
+  background: var(--mint);
+}
+
+.dc-check {
+  position: absolute;
+  right: -7px;
+  bottom: -7px;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 1.8px solid var(--ink);
+  border-radius: 50%;
+  background: var(--yellow);
+  color: var(--ink);
+}
+
+.dc-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.dc-kicker {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: var(--ink-3);
+}
+
+.dc-title {
+  display: block;
+  margin: 3px 0 3px;
+  font-size: 18.5px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.dc-sub {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.dc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin-top: 7px;
+}
+
+.dc-streak {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border: 1.5px solid rgba(255, 77, 46, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 77, 46, 0.08);
+  color: #b83417;
+  font-size: 10.5px;
+  font-weight: 800;
+}
+
+.dc-streak b {
+  font-family: var(--font-num);
+  font-size: 12px;
+}
+
+.dc-streak.is-first {
+  border-color: rgba(23, 19, 28, 0.16);
+  background: transparent;
+  color: var(--ink-3);
+}
+
+.dc-streak svg {
+  width: 13px;
+  height: 13px;
+}
+
+.dc-note {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--ink-3);
+}
+
+.dc-action {
+  flex: 0 0 auto;
+}
+
+.dc-action .btn {
+  min-height: 42px;
+  padding: 0 15px;
+  font-size: 13.5px;
+}
+
+/* ---------- 奖章墙入口卡 ---------- */
+
+.awards-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 15px;
+  border: var(--bd);
+  border-radius: var(--r-lg);
+  background: var(--card);
+  box-shadow: var(--sh);
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.16s var(--ease), box-shadow 0.16s var(--ease);
+}
+
+.awards-card:hover {
+  transform: translate(-2px, -3px);
+  box-shadow: 6px 7px 0 var(--ink);
+}
+
+.awards-card:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.ac-medals {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  padding-left: 2px;
+}
+
+.ac-medals .aw-medal {
+  margin-left: -6px;
+}
+
+.ac-medals .aw-medal:first-child {
+  margin-left: 0;
+}
+
+.ac-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.ac-kicker {
+  display: block;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: var(--ink-3);
+}
+
+.ac-count {
+  display: block;
+  margin: 1px 0 2px;
+  font-family: var(--font-num);
+  font-size: 23px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.ac-count small {
+  margin-left: 3px;
+  font-family: var(--font);
+  font-size: 10.5px;
+  font-weight: 800;
+  color: var(--ink-3);
+}
+
+.ac-meter {
+  display: block;
+  width: 100%;
+  height: 6px;
+  margin: 6px 0 5px;
+  border-radius: 999px;
+  background: rgba(23, 19, 28, 0.13);
+  overflow: hidden;
+}
+
+.ac-meter i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--blue);
+}
+
+.ac-next {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--ink-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ac-arrow {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 1.5px solid rgba(23, 19, 28, 0.2);
+  border-radius: 50%;
+  color: var(--ink-2);
+}
+
+/* ---------- 奖牌 ---------- */
+
+.aw-medal {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  line-height: 0;
+}
+
+.aw-seal {
+  position: absolute;
+  right: 6%;
+  bottom: 6%;
+  display: grid;
+  place-items: center;
+  width: 19px;
+  height: 19px;
+  border: 1.6px solid var(--ink);
+  border-radius: 50%;
+  background: var(--mint);
+  color: #fff;
+}
+
+/* ---------- 奖章墙页面 ---------- */
+
+.awards {
+  padding-top: 8px;
+}
+
+.aw-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.aw-top-tag {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--ink-3);
+}
+
+.aw-top-tag b {
+  color: var(--ink);
+  font-family: var(--font-num);
+}
+
+.aw-demo {
+  font-style: normal;
+  padding: 1px 7px;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  background: var(--yellow);
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.aw-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
+  gap: clamp(22px, 3.4vw, 46px);
+  align-items: center;
+  padding-bottom: clamp(26px, 3.4vw, 40px);
+}
+
+.aw-title {
+  margin: 12px 0 14px;
+  font-size: clamp(30px, 4.2vw, 48px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.aw-title em {
+  font-style: normal;
+  color: var(--blue);
+  background: linear-gradient(transparent 64%, var(--yellow) 64%, var(--yellow) 94%, transparent 94%);
+}
+
+.aw-lede {
+  max-width: 44ch;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--ink-2);
+}
+
+.aw-summary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  padding: 16px 18px;
+  border: var(--bd);
+  border-radius: var(--r-lg);
+  background: var(--card);
+  box-shadow: var(--sh);
+}
+
+.aw-dial {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 116px;
+  height: 116px;
+}
+
+.aw-dial svg {
+  position: absolute;
+  inset: 0;
+}
+
+.aw-dial-num {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  line-height: 1;
+}
+
+.aw-dial-num b {
+  font-family: var(--font-num);
+  font-size: 34px;
+  letter-spacing: -0.03em;
+}
+
+.aw-dial-num small {
+  margin-top: 3px;
+  font-size: 10.5px;
+  font-weight: 800;
+  color: var(--ink-3);
+}
+
+.aw-next {
+  min-width: 0;
+}
+
+.aw-next-kicker {
+  display: block;
+  font-size: 9.5px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  color: var(--ink-3);
+}
+
+.aw-next-name {
+  display: block;
+  margin: 2px 0 3px;
+  font-size: 15.5px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.aw-next-desc {
+  margin: 0 0 8px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--ink-3);
+}
+
+.aw-next-meter {
+  display: block;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(23, 19, 28, 0.1);
+  overflow: hidden;
+}
+
+.aw-next-meter i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--blue);
+  transition: width 0.7s var(--ease);
+}
+
+.aw-next-meter.is-full i {
+  background: var(--mint);
+}
+
+.aw-next-prog {
+  display: block;
+  margin-top: 5px;
+  font-size: 10.5px;
+  font-weight: 800;
+  color: var(--ink-2);
+}
+
+/* ---------- 分组 ---------- */
+
+.aw-group {
+  margin-top: 34px;
+}
+
+.aw-group-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  margin-bottom: 14px;
+}
+
+.aw-group-dot {
+  align-self: center;
+  width: 9px;
+  height: 9px;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  background: var(--gc);
+}
+
+.aw-group-head h2 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.aw-group-head p {
+  margin: 0;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--ink-3);
+}
+
+.aw-group-count {
+  margin-left: auto;
+  font-family: var(--font-num);
+  font-size: 12.5px;
+  color: var(--ink-3);
+}
+
+.aw-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.aw-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 12px 13px;
+  border: var(--bd);
+  border-radius: 16px;
+  background: var(--card);
+  box-shadow: var(--sh-sm);
+  text-align: center;
+  transition: transform 0.16s var(--ease), box-shadow 0.16s var(--ease);
+}
+
+.aw-card.is-on:hover {
+  transform: translateY(-3px);
+  box-shadow: 5px 6px 0 var(--ink);
+}
+
+.aw-card.is-off {
+  border: 2px dashed rgba(23, 19, 28, 0.26);
+  background: rgba(255, 253, 249, 0.52);
+  box-shadow: none;
+}
+
+.aw-name {
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.aw-card.is-off .aw-name {
+  color: var(--ink);
+}
+
+.aw-desc {
+  margin: 0;
+  min-height: 32px;
+  font-size: 10.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.aw-meter {
+  display: block;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(23, 19, 28, 0.09);
+  overflow: hidden;
+}
+
+.aw-meter i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--gc);
+  transform-origin: left center;
+  animation: awFill 0.7s var(--ease) both;
+}
+
+.aw-card.is-off .aw-meter i {
+  opacity: 0.4;
+}
+
+@keyframes awFill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.aw-prog {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--ink-2);
+}
+
+.aw-prog.is-done {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: #00875f;
+}
+
+.aw-prog.is-done svg {
+  width: 11px;
+  height: 11px;
+}
+
+.aw-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-top: 36px;
+  padding-top: 18px;
+  border-top: 1px dashed rgba(23, 19, 28, 0.18);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink-3);
+}
+
+.aw-foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.aw-text-btn {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 11.5px;
+  font-weight: 800;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.aw-text-btn:hover {
+  color: var(--blue);
+}
+
+/* ---------- 结算页：新奖章 ---------- */
+
+.result-awards {
+  margin: 16px auto 4px;
+  padding: 12px 14px;
+  border: var(--bd);
+  border-radius: 16px;
+  background: #eef3ff;
+  box-shadow: var(--sh-sm);
+  text-align: left;
+  animation: raIn 0.5s var(--ease) both;
+}
+
+@keyframes raIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+.ra-kicker {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10.5px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: #2b3f9e;
+}
+
+.ra-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.ra-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 10px 5px 5px;
+  border: 1.5px solid rgba(23, 19, 28, 0.2);
+  border-radius: 12px;
+  background: var(--card);
+}
+
+.ra-copy {
+  display: grid;
+  gap: 1px;
+}
+
+.ra-copy b {
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.ra-copy span {
+  font-size: 9.5px;
+  line-height: 1.2;
+  color: var(--ink-3);
+}
+
+/* ---------- 每日挑战结算 ---------- */
+
+.daily-stamp {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  width: fit-content;
+  margin: 0 auto 2px;
+  padding: 10px 24px 12px;
+  border: 2.4px solid var(--ink);
+  border-radius: 16px;
+  background: var(--mint);
+  color: #fff;
+  box-shadow: 4px 4px 0 var(--ink);
+  transform: rotate(-2deg);
+}
+
+.daily-stamp.is-full {
+  background: var(--blue);
+}
+
+.ds-kicker {
+  font-size: 9.5px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  opacity: 0.92;
+}
+
+.ds-day {
+  font-family: var(--font-num);
+  font-size: 42px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.ds-date {
+  font-size: 10.5px;
+  font-weight: 800;
+  opacity: 0.9;
+}
+
+.ds-seal {
+  position: absolute;
+  top: -11px;
+  right: -11px;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--yellow);
+  color: var(--ink);
+}
+
+.daily-bonus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 420px;
+  margin: 14px auto 0;
+  padding: 9px 14px;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: var(--yellow);
+  box-shadow: 3px 3px 0 var(--ink);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.daily-bonus b {
+  font-family: var(--font-num);
+  font-size: 17px;
+  white-space: nowrap;
+}
+
+.daily-bonus small {
+  font-family: var(--font);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+/* 每日挑战的进度条换成薄荷色，和普通闯关区分 */
+.quiz.is-daily .seg.is-done {
+  background: var(--mint);
+}
+
+.quiz.is-daily .quiz-tag {
+  border-color: rgba(0, 190, 140, 0.4);
+  background: rgba(0, 190, 140, 0.1);
+  color: #00795a;
+  font-weight: 800;
+}
+
+/* ---------- 响应式 ---------- */
+
+@media (max-width: 1000px) {
+  .today-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .awards-card {
+    min-height: 86px;
+  }
+
+  .aw-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .aw-summary {
+    max-width: 520px;
+  }
+
+  .aw-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .daily-card {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 12px;
+    padding: 13px 14px;
+  }
+
+  .dc-date {
+    width: 64px;
+    height: 70px;
+  }
+
+  .dc-date b {
+    font-size: 27px;
+  }
+
+  .dc-title {
+    font-size: 16.5px;
+  }
+
+  .dc-sub {
+    font-size: 11.5px;
+  }
+
+  .dc-action {
+    grid-column: 1 / -1;
+  }
+
+  .dc-action .btn {
+    width: 100%;
+  }
+
+  .awards-card {
+    padding: 12px 13px;
+  }
+
+  .ac-medals .aw-medal svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .aw-top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .aw-summary {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .aw-dial {
+    width: 92px;
+    height: 92px;
+  }
+
+  .aw-dial svg {
+    width: 92px;
+    height: 92px;
+  }
+
+  .aw-dial-num b {
+    font-size: 27px;
+  }
+
+  .aw-card {
+    padding: 14px 9px 12px;
+    gap: 7px;
+  }
+
+  .aw-card .aw-medal svg {
+    width: 52px;
+    height: 52px;
+  }
+
+  .aw-name {
+    font-size: 12.5px;
+  }
+
+  .aw-desc {
+    min-height: 30px;
+    font-size: 10px;
+  }
+
+  .aw-group-head p {
+    flex-basis: 100%;
+    padding-left: 19px;
+  }
+
+  .aw-group-count {
+    margin-left: auto;
+  }
+
+  .aw-foot {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ra-item {
+    flex-basis: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aw-meter i,
+  .aw-next-meter i {
+    animation: none;
+    transition: none;
+  }
+
+  .result-awards {
+    animation: none;
+  }
+
+  .aw-card,
+  .awards-card {
+    transition: none;
+  }
+}

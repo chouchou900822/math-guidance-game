@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F7F2E8">
+  <title>乘法星球 · 九九表闯关</title>
+  <meta name="description" content="把九九乘法表变成一场冒险：9 颗星球、45 句口诀、16 枚奖章，用点阵看懂「几个几」，每天一套挑战，终点是 1024 号空间站。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='26' fill='%232B4BF2'/%3E%3Cpath d='M50 17l9.3 19.4 21.4 2.8-15.7 15.2 4 21.3L50 65.6 30.9 75.7l4.1-21.3-15.8-15.2 21.4-2.8z' fill='%23FFD62E' stroke='%2317131C' stroke-width='4' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/screens.css">
+  <link rel="stylesheet" href="css/station.css">
+  <link rel="stylesheet" href="css/report.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/awards.css">
+  <link rel="stylesheet" href="css/egg.css">
+</head>
+<body>
+  <div class="sky" id="sky" aria-hidden="true"></div>
+
+  <div class="demo-bar" id="demo-bar" role="status">
+    <span class="demo-tag">演示模式</span>
+    <span class="demo-text">全部 10 款皮肤与 1024 号空间站已解锁 · 演示中的操作不会保存</span>
+    <a class="demo-exit" href="./">退出演示</a>
+  </div>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#home" data-action="home" aria-label="回到乘法星球首页">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2.6l2.9 6.05 6.66.86-4.9 4.7 1.26 6.63L12 17.6l-5.92 3.24 1.26-6.63-4.9-4.7 6.66-.86z"
+                  fill="#FFD62E" stroke="#17131C" stroke-width="1.7" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand-name">乘法星球</span>
+      </a>
+
+      <div class="topbar-tools">
+        <button class="star-pill" type="button" data-action="shop" aria-label="可用星星，去皮肤馆看看" title="去星球皮肤馆">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2.6l2.9 6.05 6.66.86-4.9 4.7 1.26 6.63L12 17.6l-5.92 3.24 1.26-6.63-4.9-4.7 6.66-.86z"
+                  fill="#FFD62E" stroke="#17131C" stroke-width="1.7" stroke-linejoin="round"/>
+          </svg>
+          <span id="star-total">0</span>
+        </button>
+        <button class="icon-btn" id="sound-toggle" type="button" data-action="toggle-sound" aria-label="关闭声音" aria-pressed="true">
+          <svg class="ico-sound-on" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 9.6h3.1L12 5.4v13.2L7.1 14.4H4z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>
+            <path d="M15.8 9.2a4 4 0 0 1 0 5.6M18.4 6.6a8 8 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+          </svg>
+          <svg class="ico-sound-off" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 9.6h3.1L12 5.4v13.2L7.1 14.4H4z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>
+            <path d="M15.6 9.6l5 4.8M20.6 9.6l-5 4.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="app">
+
+    <main id="view" class="view" tabindex="-1"></main>
+
+    <footer class="site-foot">
+      <span class="foot-tag">给家长</span>
+      <span>先点开一张表，让孩子用点阵看懂「几个几」，再闯关 —— 比死记硬背更牢。</span>
+      <span class="foot-meta">1024 程序员节参赛作品 · <a class="foot-demo" href="?demo=1">演示模式</a></span>
+      <span class="foot-nav">
+        <button type="button" class="foot-link" data-action="report">学习报告</button>
+        <button type="button" class="foot-link" data-action="awards">奖章墙</button>
+        <button type="button" class="foot-link" data-action="about">关于这个作品</button>
+      </span>
+    </footer>
+  </div>
+
+  <div id="celebrate" class="celebrate" aria-hidden="true"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <p style="text-align:center;padding:24px;font-weight:700;">这个游戏需要开启 JavaScript 才能玩哦。</p>
+  </noscript>
+
+  <script src="js/data/core.js"></script>
+  <script src="js/data/store-migrate.js"></script>
+  <script src="js/data/store.js"></script>
+  <script src="js/data/store-demo.js"></script>
+  <script src="js/data/store-quiz.js"></script>
+  <script src="js/data/stats-text.js"></script>
+  <script src="js/data/stats.js"></script>
+  <script src="js/base/audio.js"></script>
+  <script src="js/base/ui.js"></script>
+  <script src="js/planet/planet-paint-kit.js"></script>
+  <script src="js/planet/planet-textures-special.js"></script>
+  <script src="js/planet/planet-textures.js"></script>
+  <script src="js/planet/planet-lut.js"></script>
+  <script src="js/planet/planet-deco.js"></script>
+  <script src="js/planet/planet.js"></script>
+  <script src="js/planet/planet-fx.js"></script>
+  <script src="js/planet/egg.js"></script>
+  <script src="js/screens/skins.js"></script>
+  <script src="js/screens/skins-view.js"></script>
+  <script src="js/panels/station-view.js"></script>
+  <script src="js/panels/station.js"></script>
+  <script src="js/screens/home.js"></script>
+  <script src="js/screens/learn.js"></script>
+  <script src="js/screens/speak.js"></script>
+  <script src="js/screens/quiz.js"></script>
+  <script src="js/screens/play.js"></script>
+  <script src="js/panels/report-view.js"></script>
+  <script src="js/panels/report.js"></script>
+  <script src="js/panels/about-view.js"></script>
+  <script src="js/panels/about.js"></script>
+  <script src="js/data/daily.js"></script>
+  <script src="js/panels/awards-list.js"></script>
+  <script src="js/panels/awards.js"></script>
+  <script src="js/screens/awards-view.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/app-actions.js"></script>
+</body>
+</html>
